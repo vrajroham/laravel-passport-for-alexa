@@ -25,7 +25,9 @@ class AuthServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerPolicies();
-
+        Passport::tokensCan([
+            'access-alexa' => 'Access Alexa Skills',
+        ]); 
          Passport::routes();
     }
 }
